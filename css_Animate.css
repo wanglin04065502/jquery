@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	font-size:13px;
+}
+.p_Lst
+{
+	position:relative;
+	float:left;
+	width:90px;
+	height:98px;
+	padding:8px;
+	border:1px solid #666;
+	margin:10px 8px 20px 8px;
+}
+.p_Img
+{
+	width:90px;
+	height:90px;
+	margin-bottom:5px;
+	overflow:hidden;
+}
+.p_Alt
+{
+	display:none;
+}
+.p_Big
+{
+	display:block;
+	width:90px;
+	height:23px;
+	background:#0FF;
+	cursor:pointer;
+	text-align:center;
+}
+.p_Cls
+{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	display:block;
+	width:40px;
+	height:21px;
+	background:#CCC;
+	text-indent:0px;
+	text-align:center;
+}
+
+
