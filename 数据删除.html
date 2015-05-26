@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-2.0.0.min.js">
+</script>
+
+<style  type="text/css">
+body
+{
+	font-size:12px;
+}
+table
+{
+	width:600px;
+	border-collapse:collapse;
+}
+
+table tr td,th
+{
+	border:solid 1px #666;
+	text-align:center;
+}
+
+table tr td img
+{
+	border:solid 1px #ccc;
+	padding:3px;
+	width:40px;
+	height:40px;
+	cursor:hand;
+}
+
+table tr td span
+{
+	float:left;
+	padding-left:12px;
+}
+table tr th
+{
+	background-color:#ccc;
+	height:32px;
+}
+
+.clsImg
+{
+	position:absolute;
+	border:solid 1px #ccc;
+	padding:3px;
+	width:85px;
+	height:120px;
+	background-color:#eee;
+	display:none;
+}
+
+.btn
+{
+	border:#666 1px solid;
+	padding:2px;
+	width:50px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ece9D8);
+}
+	
+.selected
+{
+	background-color:#C00;
+}
+.unSelected
+{
+	background-color:#0F9;
+}
+
+
+
+
+</style>
+<script type="text/javascript">
+$(function()
+{
+	
+	//隔行变色
+	$("table tr:nth-child(odd)").css("background-color","#eee");
+	
+	$("#chkAll").click(function() {
+        if(this.checked)
+		{
+			//alert(1);
+			$("table tr td input[type=checkbox]").prop("checked",true);//attr("checked",true);
+		}
+		else
+		{
+			//alert(0);	
+			$("table tr td input[type=checkbox]").prop("checked",false);
+		}
+    });
+	
+	
+	//设置删除函数
+	$("#btnDel").click(function(e) {
+        
+		var intL=$("table tr td input:checked:not('#chkAll')").length;
+		
+		if(intL>0)
+		{
+			$("table tr td input:checked:not('#chkAll')").each(function(index, element) {
+                
+				
+				
+					$("table tr[id="+this.value+"]").remove();
+				
+				
+            });
+		}
+		else
+		{
+			
+		}
+    });
+	
+	
+	/**
+	*小图片鼠标移动事件
+	*/
+	$("table tr td img").mousemove(function(e) {
+        
+		
+		$("#imgTip").prop("src","http://g3.ykimg.com/1100641F46552B7881470204B921BFD90C1624-A7F0-58F0-620D-7FDBD4859763").css({"top":+(e.pageY+15)+"px","left":+(e.pageX+15)+"px"}).show(1000);
+		
+    });
+	
+	//隐藏图片
+	$("table tr td img").mouseout(function(e) {
+        $("#imgTip").hide();
+    });
+	
+   
+	
+});
+</script>
+
+</head>
+
+<body>
+
+<table>
+<thead>
+<tr><th>选项</th><th>编号</th><th>封面</th><th>购书人</th><th>性别</th><th>购书价</th></tr>
+</thead>
+
+<tr id="0">
+<td><input id="chechBox1" type="checkbox" value="0"/></td>
+<td>1001</td><td><img src="image/0.png" alt=""/></td><td>李晓明</td><td>男</td><td>35.6元</td>
+</tr>
+
+<tr id="1">
+<td><input id="chechBox2" type="checkbox" value="1"/></td>
+<td>1002</td><td><img src="image/1.png" alt=""/></td><td>刘明明</td><td>女</td><td>37.8元</td>
+</tr>
+
+<tr id="2">
+<td><input id="chechBox3" type="checkbox" value="2"/></td>
+<td>1003</td><td><img src="image/3.png" alt=""/></td><td>张小星</td><td>女</td><td>45.6元</td>
+</tr>
+
+</table>
+
+<table>
+<tr>
+<td style="text-align:left;height:28px">
+<span>
+<input id="chkAll" type="checkbox" />全选
+</span>
+
+<span><input type="button" id="btnDel" value="删除" class="btn"/></span>
+</td>
+</tr>
+</table>
+
+<img id="imgTip" class="clsImg" src="image/photo2.png"/>
+
+
+
+
+</body>
+</html>

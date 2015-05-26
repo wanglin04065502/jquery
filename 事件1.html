@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-2.0.0.min.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	
+	/*$("img").toggle(function()
+	{
+		alert(1);
+	   $("img").attr("src","image/1.png");	
+	},
+	function()
+	{
+		alert(2);
+		$("img").attr("src","image/2.png");	
+	},
+	function()
+	{
+		alert(3);
+		$("img").attr("src","image/3.png");	
+	}
+	
+	);
+	*/
+	
+	$("img").hover(function()
+	{
+		$("#btnShow").html("mouseOver").show();
+		//alert("mouseOver");
+	},function()
+	{
+		$("#btnShow").html("mouseLeave").show();
+		//alert("mouseLeave");
+	});
+	
+	$("img").toggle(function()
+	{
+		//alert(1);
+	},function(){
+		//alert(2);
+	},[function()
+	{
+		alert(3);
+	},]);
+	
+	
+	
+	
+});
+</script>
+</head>
+
+<body>
+<div id="div1">
+<input type="button" value="button" id="button1"/>
+</div>
+
+<div id="btnShow"></div>
+
+<img src="image/0.png" />
+
+
+</body>
+</html>

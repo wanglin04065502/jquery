@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	font-size:13px
+}
+.divFrame
+{
+	width:180px;
+}
+.divFrame .divMenu
+{
+	float:left;
+}
+.divFrame.divContent
+{
+	float:right;
+}
+.divFrame.divContent img
+{
+	display:none;
+}
+.btn
+{
+	border:#666 1px solid;
+	padding:2px;
+	width:80px;
+	margin-bottom:5px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9DB);
+}

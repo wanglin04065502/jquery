@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>toggle</title>
+<link href="common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery-2.0.0.min.js"></script>
+<script type="text/javascript">
+$(function()
+{
+	
+	$("input:eq(0)").click(function(e) {
+        $("img").toggle();
+    });
+	
+	$("input:eq(1)").click(function(e) {
+        var intI=0;
+		var blnA=intI>1;//获取逻辑值
+		$("img").toggle(blnA);
+    });
+	
+	
+	$("input:eq(2)").click(function(e) {
+        $("img").toggle(3000,function()
+		{
+			$(this).css({"border":"solid 1px #ccc","padding":"2px"});
+		});
+    });
+	$("input:eq(3)").click(function(e) {
+        
+		$("img").slideToggle(3000,function()
+		{
+			//$(this).css({"border":"solid 1px #ccc","padding":"2px"});
+			
+		});
+		
+		
+		
+    });
+	
+});
+</script>
+</head>
+
+<body>
+<div class="divFrame">
+<div class="divMenu">
+<input id="Button1" type="button" value="无参数" class="btn"/><br/>
+<input id="Button2" class="btn" type="button" value="逻辑显示"/><br/>
+<input type="button" id="Button3" value="动画显示" class="btn"/>
+<input type="button" id="Button4" value="SlideTpggle" class="btn"/>
+</div>
+<div class="divContent">
+<img src="image/photo4.jpg" alt=""/>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

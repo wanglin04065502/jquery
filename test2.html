@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript"  src="jquery-2.0.0.min.js"></script>
+<style type="text/css">
+body
+{
+	font-size:12px;
+	text-align:center;
+}
+div
+{
+	padding:3px;
+	margin:3px;
+	width:120px;
+	float:left;
+}
+.txt
+{
+	border:#666 1px  solid;
+	padding:3px;
+}
+</style>
+<script type="text/javascript">
+$(function()
+{
+	
+	//alert($("select").length)
+
+  //  $(":radio").val(["radio2","radio3"]);
+
+	$("select").change(function() {
+		var strSel=$(this).val().join(",");
+		
+        $("#p1").html(strSel);
+		$("#p1").show(3000);
+        
+    });
+	$("select")[1].change(function() {
+		var strSel=$("select").val().join(",");
+        $("#p1").html(strSel);
+        
+    });
+	
+	$("input").change(function(e) {
+      var strTxt=$("input").val();
+	  $("#p2").html(strTxt);  
+    });
+	
+	$("input").focus(function(e) {
+        $("input").val("");
+    });
+	
+	
+	
+});
+</script>
+</head>
+
+<body>
+
+<div>
+<p>
+
+<select multiple="multiple" style="height:96px;width:85px">
+<option value="1">Item 1</option>
+<option value="2">Item 2</option>
+<option value="3">Item 3</option>
+<option value="4">Item 4</option>
+<option value="5">Item 5</option>
+<option value="6">Item 6</option>
+
+  </select>
+  <select multiple="multiple" style="height:96px;width:85px">
+    <option value="a">Item a</option>
+    <option value="b">Item b</option>
+    <option value="c">Item c</option>
+    <option value="d">Item d</option>
+    <option value="e">Item e</option>
+    <option value="f">Item f</option>
+    
+  </select>
+  
+  </p>
+<p>
+  <input type="radio" id="radio1" value="radio1"/>
+  <input type="radio" id="radio2" value="radio2"/>
+  <input type="radio" id="radio3" value="radio3"/>
+  
+  
+</p>
+<p id="p1"></p>
+
+</div>
+<div>
+<input type="text" class="txt"/>
+<p id="p2"></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
