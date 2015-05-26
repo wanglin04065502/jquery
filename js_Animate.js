@@ -74,6 +74,7 @@ $(function()
 				}
 				//重新获取当前放大图片的索引号
 				curIndex=index;
+				$clos.click();
 			
         });
 		
@@ -123,5 +124,29 @@ $(function()
 			
 		}
 		
+		
+		
     });
+	
+	
+	var imgNum=$(".p_Big").length;
+	window.setInterval(function()
+	{
+		var rand=Math.floor(Math.random()*100);
+		
+		
+		$(".p_Big").each(function(index, element) {
+            if(rand%imgNum==index)
+			{
+				$(this).click();
+				return;
+			}
+        });
+		
+		
+		
+	},4000);
+	
+	
+	
 });
